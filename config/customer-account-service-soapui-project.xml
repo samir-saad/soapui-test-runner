@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="a0903371-dffa-4bc0-b927-0eafdad859cb" activeEnvironment="Default" name="Customer Account Service - with load" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.LoadTestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Print Report Statistics" value="false"/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="TestSuite"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Report to Generate" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="LoadTest" value="LoadTest - getCustomerAccount"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="ThreadCount" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="TestCase 1.1 - getCustomerAccount - Success"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value="C:\Program Files (x86)\SmartBear\SoapUI-5.4.0/bin"/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Limit" value=""/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="f9c7428d-b758-41f6-a95f-e0e6e3d63f17" wsaVersion="NONE" name="EsbCustomerInformationManagement_CustomerAccount_CustomerAccount_Binder" type="wsdl" bindingName="{http://www.videotron.com/EsbCustomerInformationManagement/CustomerAccount/2_0}EsbCustomerInformationManagement_CustomerAccount_CustomerAccount_Binder" soapVersion="1_2" anonymous="optional" definition="http://customer-account-service-dev.cloudapps.opticca.com/soap?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://customer-account-service-dev.cloudapps.opticca.com/soap?wsdl"><con:part><con:url>http://customer-account-service-dev.cloudapps.opticca.com/soap?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CustomerAccount_2_0" targetNamespace="http://www.videotron.com/EsbCustomerInformationManagement/CustomerAccount/2_0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns1="http://www.videotron.com/EsbCustomerInformationManagement/CustomerAccount/2_0" xmlns:tns="http://www.videotron.com/EsbCustomerInformationManagement/CustomerAccount/2_0" xmlns:soapjms="http://www.w3.org/2010/soapjms/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:HDR3="http://www.videotron.com/EsbCustomerInformationManagement.doc.requestHeader.Header" xmlns:HDR2="http://www.videotron.com/EsbCustomerInformationManagement.doc.responseHeader.Header">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.videotron.com/ENT_Customer/Customer/2.0" xmlns:tns3="http://www.videotron.com/ENT_Customer/Customer/2.0">
+      <xsd:element name="contactPointType" type="xsd:string"/>
+      <xsd:element name="contactMedium" type="tns3:ContactMedium_v2"/>
+      <xsd:element name="individual" type="tns3:Individual_v2"/>
+      <xsd:element name="organization" type="tns3:Organization_v2"/>
+      <xsd:element name="partyContact" type="tns3:PartyContact_v2"/>
+      <xsd:element name="email" type="tns3:Email_v2"/>
+      <xsd:element name="postalAddress" type="tns3:PostalAddress_v2"/>
+      <xsd:element name="phone" type="tns3:Phone_v2"/>
+      <xsd:element name="party" type="tns3:Party_v2"/>
+      <xsd:element name="id" type="xsd:string"/>
+      <xsd:element name="firstName" type="xsd:string"/>
+      <xsd:element name="lastName" type="xsd:string"/>
+      <xsd:element name="name" type="xsd:string"/>
+      <xsd:element name="emailAddress" type="xsd:string"/>
+      <xsd:element name="civicNumber" type="xsd:string"/>
+      <xsd:element name="civicSuffixNumber" type="xsd:string"/>
+      <xsd:element name="street" type="xsd:string"/>
+      <xsd:element name="streetType" type="xsd:string"/>
+      <xsd:element name="streetDirection" type="xsd:string"/>
+      <xsd:element name="localNumber" type="xsd:string"/>
+      <xsd:element name="residenceType">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="COMMERCIAL"/>
+            <xsd:enumeration value="RESIDENTIAL"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="potentielId" type="xsd:string"/>
+      <xsd:element name="municipality" type="xsd:string"/>
+      <xsd:element name="localCode">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="APARTMENT"/>
+            <xsd:enumeration value="CIVICADDRESS"/>
+            <xsd:enumeration value="N/A"/>
+            <xsd:enumeration value="OFFICE"/>
+            <xsd:enumeration value="PIECE"/>
+            <xsd:enumeration value="ROOM"/>
+            <xsd:enumeration value="SUITE"/>
+            <xsd:enumeration value="UNIT"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="sector" type="xsd:string"/>
+      <xsd:element name="provinceCode" type="xsd:string"/>
+      <xsd:element name="postalCode" type="xsd:string"/>
+      <xsd:element name="countryCode" type="xsd:string"/>
+      <xsd:element name="phoneNumber" type="xsd:string"/>
+      <xsd:element name="preferredLanguage">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="EN"/>
+            <xsd:enumeration value="FR"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="isInPerception" type="xsd:boolean"/>
+      <xsd:element name="currentBalanceAmount" type="xsd:decimal"/>
+      <xsd:element name="isSeasonal" type="xsd:boolean"/>
+      <xsd:element name="status">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ACTIVE"/>
+            <xsd:enumeration value="INACTIVE"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="orderInProgress" type="xsd:boolean"/>
+      <xsd:element name="sgaAccountNumber" type="xsd:string"/>
+      <xsd:element name="billPaymentMethod">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="CREDITCARD"/>
+            <xsd:enumeration value="DEBITCARD"/>
+            <xsd:enumeration value="PAYBYINVOICE"/>
+            <xsd:enumeration value="PREAUTHORIZEDDEBIT"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="billDeliveryMethod">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="POSTAL"/>
+            <xsd:enumeration value="EMAILNOTIFICATION"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="billDay" type="xsd:string"/>
+      <xsd:element name="isMonthly" type="xsd:boolean"/>
+      <xsd:element name="customerBillSpec" type="tns3:CustomerBillSpec_v2"/>
+      <xsd:element name="productFamily" type="tns3:ProductFamily_v2"/>
+      <xsd:element name="customerAccountContact" type="tns3:CustomerAccountContact_v2"/>
+      <xsd:element name="billDate" type="xsd:date"/>
+      <xsd:element name="paymentDueDate" type="xsd:date"/>
+      <xsd:element name="billAmount" type="xsd:decimal"/>
+      <xsd:element name="billPeriodStartDate" type="xsd:date"/>
+      <xsd:element name="billPeriodEndDate" type="xsd:date"/>
+      <xsd:element name="customerBill" type="tns3:CustomerBill_v2"/>
+      <xsd:element name="customerAccount" type="tns3:CustomerAccount_v2"/>
+      <xsd:element name="paymentDate" type="xsd:date"/>
+      <xsd:element name="paymentAmount" type="xsd:decimal"/>
+      <xsd:element name="customerPayment" type="tns3:CustomerPayment_v2"/>
+      <xsd:element name="creditRiskRating">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ATRISK"/>
+            <xsd:enumeration value="AVERAGE"/>
+            <xsd:enumeration value="GOOD"/>
+            <xsd:enumeration value="NEW"/>
+            <xsd:enumeration value="NONE"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="customerCreditProfile" type="tns3:CustomerCreditProfile_v2"/>
+      <xsd:element name="customer" type="tns3:Customer_v2"/>
+      <xsd:element name="customerInput" type="tns3:CustomerInput"/>
+      <xsd:element name="creditCardType">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="INVALID"/>
+            <xsd:enumeration value="MASTERCARD"/>
+            <xsd:enumeration value="VISA"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="securedDisplayNumber" type="xsd:string"/>
+      <xsd:element name="expiredMtYr" type="xsd:string"/>
+      <xsd:element name="nameOnCard" type="xsd:string"/>
+      <xsd:element name="bankId" type="xsd:string"/>
+      <xsd:element name="bankTransitId" type="xsd:string"/>
+      <xsd:element name="securedDisplayAccountId" type="xsd:string"/>
+      <xsd:element name="accountOwnerName" type="xsd:string"/>
+      <xsd:element name="creditCardPM" type="tns3:CreditCardPM_v2"/>
+      <xsd:element name="bankAccountDebitPM" type="tns3:BankAccountDebitPM_v2"/>
+      <xsd:complexType name="Email_v2">
+        <xsd:sequence>
+          <xsd:element ref="tns3:emailAddress"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PostalAddress_v2">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns3:civicNumber"/>
+          <xsd:element minOccurs="0" ref="tns3:civicSuffixNumber"/>
+          <xsd:element minOccurs="0" ref="tns3:street"/>
+          <xsd:element minOccurs="0" ref="tns3:streetType"/>
+          <xsd:element minOccurs="0" ref="tns3:streetDirection"/>
+          <xsd:element minOccurs="0" ref="tns3:localNumber"/>
+          <xsd:element minOccurs="0" ref="tns3:residenceType"/>
+          <xsd:element minOccurs="0" ref="tns3:potentielId"/>
+          <xsd:element minOccurs="0" ref="tns3:municipality"/>
+          <xsd:element minOccurs="0" ref="tns3:localCode"/>
+          <xsd:element minOccurs="0" ref="tns3:sector"/>
+          <xsd:element minOccurs="0" ref="tns3:provinceCode"/>
+          <xsd:element minOccurs="0" ref="tns3:postalCode"/>
+          <xsd:element minOccurs="0" ref="tns3:countryCode"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Phone_v2">
+        <xsd:sequence>
+          <xsd:element ref="tns3:phoneNumber"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Customer_v2">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns3:party"/>
+          <xsd:element ref="tns3:id"/>
+          <xsd:element ref="tns3:preferredLanguage"/>
+          <xsd:element ref="tns3:isInPerception"/>
+          <xsd:element maxOccurs="unbounded" ref="tns3:customerAccount"/>
+          <xsd:element minOccurs="0" ref="tns3:customerCreditProfile"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PartyContact_v2">
+        <xsd:sequence>
+          <xsd:element name="contactPointType">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="HOMEPHONE"/>
+                <xsd:enumeration value="WORKPHONE"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:choice>
+            <xsd:element ref="tns3:email"/>
+            <xsd:element ref="tns3:phone"/>
+            <xsd:element ref="tns3:postalAddress"/>
+          </xsd:choice>
+        </xsd:sequence>
+        <xsd:attribute name="media" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="ContactMedium_v2">
+        <xsd:sequence></xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Individual_v2">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns3:firstName"/>
+          <xsd:element minOccurs="0" ref="tns3:lastName"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Organization_v2">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns3:name"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Party_v2">
+        <xsd:sequence>
+          <xsd:choice>
+            <xsd:element ref="tns3:individual"/>
+            <xsd:element ref="tns3:organization"/>
+          </xsd:choice>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="tns3:partyContact"/>
+        </xsd:sequence>
+        <xsd:attribute name="type">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:enumeration value="INDIVIDUAL"/>
+              <xsd:enumeration value="ORGANIZATION"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:attribute>
+      </xsd:complexType>
+      <xsd:complexType name="CustomerAccount_v2">
+        <xsd:sequence>
+          <xsd:element ref="tns3:id"/>
+          <xsd:element minOccurs="0" ref="tns3:currentBalanceAmount"/>
+          <xsd:element minOccurs="0" ref="tns3:isSeasonal"/>
+          <xsd:element minOccurs="0" ref="tns3:status"/>
+          <xsd:element minOccurs="0" ref="tns3:orderInProgress"/>
+          <xsd:element minOccurs="0" ref="tns3:sgaAccountNumber"/>
+          <xsd:element minOccurs="0" ref="tns3:customerBillSpec"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="tns3:productFamily"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="tns3:customerAccountContact"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="tns3:customerBill"/>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" ref="tns3:customerPayment"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CustomerInput">
+        <xsd:sequence>
+          <xsd:element name="party">
+            <xsd:complexType>
+              <xsd:attribute name="type">
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="INDIVIDUAL"/>
+                    <xsd:enumeration value="ORGANIZATION"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="id" type="xsd:string"/>
+          <xsd:element name="customerAccount">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="id" type="xsd:string"/>
+                <xsd:element minOccurs="0" name="customerBillSpec">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="billDeliveryMethod" type="xsd:string"/>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+                <xsd:element minOccurs="0" name="customerAccountContact">
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="contactPointType">
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:string">
+                            <xsd:enumeration value="BILLINGEMAIL"/>
+                            <xsd:enumeration value="CONTACTEMAIL"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="emailAddress" type="xsd:string"/>
+                    </xsd:sequence>
+                    <xsd:attribute name="media" type="xsd:string"/>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CustomerBillSpec_v2">
+        <xsd:sequence>
+          <xsd:element ref="tns3:billPaymentMethod"/>
+          <xsd:element ref="tns3:billDeliveryMethod"/>
+          <xsd:element ref="tns3:billDay"/>
+          <xsd:element ref="tns3:isMonthly"/>
+          <xsd:element minOccurs="0" ref="tns3:creditCardPM"/>
+          <xsd:element minOccurs="0" ref="tns3:bankAccountDebitPM"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ProductFamily_v2">
+        <xsd:sequence>
+          <xsd:element name="id">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="TELEVISION"/>
+                <xsd:enumeration value="INTERNET"/>
+                <xsd:enumeration value="TELEPHONY"/>
+                <xsd:enumeration value="MOBILE"/>
+                <xsd:enumeration value="ILLICO"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CustomerAccountContact_v2">
+        <xsd:sequence>
+          <xsd:element name="contactPointType">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:enumeration value="BILLINGADDRESS"/>
+                <xsd:enumeration value="BILLINGEMAIL"/>
+                <xsd:enumeration value="CONTACTEMAIL"/>
+                <xsd:enumeration value="SERVICEADDRESS"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:choice>
+            <xsd:element ref="tns3:email"/>
+            <xsd:element ref="tns3:phone"/>
+            <xsd:element ref="tns3:postalAddress"/>
+          </xsd:choice>
+        </xsd:sequence>
+        <xsd:attribute name="media" type="xsd:string"/>
+      </xsd:complexType>
+      <xsd:complexType name="CustomerBill_v2">
+        <xsd:sequence>
+          <xsd:element ref="tns3:id"/>
+          <xsd:element ref="tns3:billDate"/>
+          <xsd:element ref="tns3:paymentDueDate"/>
+          <xsd:element ref="tns3:billAmount"/>
+          <xsd:element ref="tns3:billPeriodStartDate"/>
+          <xsd:element ref="tns3:billPeriodEndDate"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CreditCardPM_v2">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns3:creditCardType"/>
+          <xsd:element ref="tns3:securedDisplayNumber"/>
+          <xsd:element ref="tns3:expiredMtYr"/>
+          <xsd:element minOccurs="0" ref="tns3:nameOnCard"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="BankAccountDebitPM_v2">
+        <xsd:sequence>
+          <xsd:element ref="tns3:bankId"/>
+          <xsd:element ref="tns3:bankTransitId"/>
+          <xsd:element ref="tns3:securedDisplayAccountId"/>
+          <xsd:element minOccurs="0" ref="tns3:accountOwnerName"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CustomerPayment_v2">
+        <xsd:sequence>
+          <xsd:element ref="tns3:paymentDate"/>
+          <xsd:element ref="tns3:paymentAmount"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="CustomerCreditProfile_v2">
+        <xsd:sequence>
+          <xsd:element ref="tns3:creditRiskRating"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://www.videotron.com/EsbCustomerInformationManagement.doc.responseHeader.Header" xmlns:tns="http://www.videotron.com/EsbCustomerInformationManagement.doc.responseHeader.Header">
+      <xsd:element name="h2" type="tns:Header"/>
+      <xsd:element name="transactionId" type="xsd:string"/>
+      <xsd:element name="requestorPlatform" type="xsd:string"/>
+      <xsd:element name="executionElapseTime" type="xsd:string"/>
+      <xsd:element name="executionDateTime" type="xsd:dateTime"/>
+      <xsd:element name="Header" type="tns:Header2"/>
+      <xsd:complexType name="Header">
+        <xsd:sequence>
+          <xsd:element ref="tns:Header"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Header2">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns:transactionId"/>
+          <xsd:element minOccurs="0" ref="tns:requestorPlatform"/>
+          <xsd:element minOccurs="0" ref="tns:executionElapseTime"/>
+          <xsd:element minOccurs="0" ref="tns:executionDateTime"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://www.videotron.com/EsbCustomerInformationManagement/CustomerAccount/2_0" xmlns:tns3="http://www.videotron.com/ENT_Customer/Customer/2.0" xmlns:tns2="http://www.videotron.com/EsbCustomerInformationManagement/CustomerAccount/2_0">
+      <xsd:import namespace="http://www.videotron.com/ENT_Customer/Customer/2.0"/>
+      <xsd:element name="getCustomerAccount_In" type="tns2:getCustomerAccount_In"/>
+      <xsd:element name="getCustomerAccount_Out" type="tns2:getCustomerAccount_Out"/>
+      <xsd:element name="setCustomerAccount_In" type="tns2:setCustomerAccount_In"/>
+      <xsd:element name="setCustomerAccount_Out" type="tns2:setCustomerAccount_Out"/>
+      <!--<xsd:element name="Fault" type="tns2:SOAP_FAULT"/>-->
+      <xsd:complexType name="getCustomerAccount_In">
+        <xsd:sequence>
+          <xsd:element name="customerAccountNo" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="getCustomerAccount_Out">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns3:customer"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="setCustomerAccount_In">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" ref="tns3:customerInput"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="setCustomerAccount_Out">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns3:customerInput"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <!--<xsd:complexType name="SOAP_FAULT">
+            <xsd:sequence>
+              <xsd:element name="code" type="tns2:code"/>
+              <xsd:element maxOccurs="unbounded" name="reasons" type="tns:reasons"/>
+              <xsd:element minOccurs="0" name="node" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="role" type="xsd:string"/>
+              <xsd:element minOccurs="0" name="detail" type="tns2:detail"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="code">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="namespaceName" type="xsd:string"/>
+              <xsd:element name="localName" type="xsd:string"/>
+              <xsd:element maxOccurs="unbounded" minOccurs="0" name="subCodes" type="tns2:subCodes"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType name="subCodes">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="namespaceName" type="xsd:string"/>
+              <xsd:element name="localName" type="xsd:string"/>
+            </xsd:sequence>
+          </xsd:complexType>
+          <xsd:complexType mixed="true" name="reasons">
+            <xsd:attribute name="lang" type="xsd:string"/>
+          </xsd:complexType>
+          <xsd:complexType name="detail">
+            <xsd:sequence>
+            </xsd:sequence>
+          </xsd:complexType>-->
+    </xsd:schema>
+    <xsd:schema targetNamespace="http://www.videotron.com/EsbCustomerInformationManagement.doc.requestHeader.Header" xmlns:tns4="http://www.videotron.com/EsbCustomerInformationManagement.doc.requestHeader.Header">
+      <xsd:element name="header" type="tns4:Header"/>
+      <xsd:element name="transactionId" type="xsd:string"/>
+      <xsd:element name="transactionStartDateTime" type="xsd:dateTime"/>
+      <xsd:element name="transactionExpirationDateTime" type="xsd:dateTime"/>
+      <xsd:element name="requestorPlatform" type="xsd:string"/>
+      <xsd:complexType name="Header">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" ref="tns4:transactionId"/>
+          <xsd:element minOccurs="0" ref="tns4:transactionStartDateTime"/>
+          <xsd:element minOccurs="0" ref="tns4:transactionExpirationDateTime"/>
+          <xsd:element minOccurs="0" ref="tns4:requestorPlatform"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CustomerAccount_PortType_setCustomerAccount_In">
+    <wsdl:part element="tns:setCustomerAccount_In" name="parameters"></wsdl:part>
+    <wsdl:part element="HDR3:header" name="header"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CustomerAccount_PortType_getCustomerAccount_Out">
+    <wsdl:part element="tns:getCustomerAccount_Out" name="parameters"></wsdl:part>
+    <wsdl:part element="HDR2:h2" name="header"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CustomerAccount_PortType_setCustomerAccount_Out">
+    <wsdl:part element="tns:setCustomerAccount_Out" name="parameters"></wsdl:part>
+    <wsdl:part element="HDR2:h2" name="header"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CustomerAccount_PortType_getCustomerAccount_In">
+    <wsdl:part element="tns:getCustomerAccount_In" name="parameters"></wsdl:part>
+    <wsdl:part element="HDR3:header" name="header"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CustomerAccount_PortType">
+    <wsdl:operation name="getCustomerAccount">
+      <wsdl:input message="tns:CustomerAccount_PortType_getCustomerAccount_In"></wsdl:input>
+      <wsdl:output message="tns:CustomerAccount_PortType_getCustomerAccount_Out"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCustomerAccount">
+      <wsdl:input message="tns:CustomerAccount_PortType_setCustomerAccount_In"></wsdl:input>
+      <wsdl:output message="tns:CustomerAccount_PortType_setCustomerAccount_Out"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EsbCustomerInformationManagement_CustomerAccount_CustomerAccount_Binder" type="tns:CustomerAccount_PortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getCustomerAccount">
+      <soap12:operation soapAction="CustomerAccount_getCustomerAccount" soapActionRequired="true" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+        <soap12:header message="tns:CustomerAccount_PortType_getCustomerAccount_In" part="header" use="literal"></soap12:header>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+        <soap12:header message="tns:CustomerAccount_PortType_getCustomerAccount_Out" part="header" use="literal"></soap12:header>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setCustomerAccount">
+      <soap:operation soapAction="CustomerAccount_setCustomerAccount" style="document"/>
+      <wsdl:input>
+        <soap12:body parts="parameters" use="literal"/>
+        <soap12:header message="tns:CustomerAccount_PortType_setCustomerAccount_In" part="header" use="literal"></soap12:header>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body parts="parameters" use="literal"/>
+        <soap12:header message="tns:CustomerAccount_PortType_setCustomerAccount_Out" part="header" use="literal"></soap12:header>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EsbCustomerInformationManagement.CustomerAccount.CustomerAccount_2_0">
+    <wsdl:port binding="tns:EsbCustomerInformationManagement_CustomerAccount_CustomerAccount_Binder" name="EsbCustomerInformationManagement_CustomerAccount_CustomerAccount_Port">
+      <soap12:address location="http://customer-account-service-dev.cloudapps.opticca.com/soap"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>${#Project#endpoint}</con:endpoint></con:endpoints><con:operation id="a1e854e8-9dcd-4c24-9729-ba6692734e10" isOneWay="false" action="CustomerAccount_getCustomerAccount" name="getCustomerAccount" bindingOperationName="getCustomerAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dab8cedf-9a45-48ab-9d49-179848a3d633" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#endpoint}</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:esb="http://www.videotron.com/EsbCustomerInformationManagement.doc.requestHeader.Header" xmlns:_0="http://www.videotron.com/EsbCustomerInformationManagement/CustomerAccount/2_0">\r
+   <soap:Header>\r
+      <esb:header>\r
+         <!--Optional:-->\r
+         <esb:transactionId>1</esb:transactionId>\r
+         <!--Optional:-->\r
+         <esb:transactionStartDateTime>2018-10-20T10:10:10</esb:transactionStartDateTime>\r
+         <!--Optional:-->\r
+         <esb:transactionExpirationDateTime>2018-10-21T10:10:10</esb:transactionExpirationDateTime>\r
+         <!--Optional:-->\r
+         <esb:requestorPlatform>A</esb:requestorPlatform>\r
+      </esb:header>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <_0:getCustomerAccount_In>\r
+         <customerAccountNo>5555</customerAccountNo>\r
+      </_0:getCustomerAccount_In>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.videotron.com/EsbCustomerInformationManagement/CustomerAccount/2_0/CustomerAccount_PortType/getCustomerAccountRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a9ec6353-f1a1-4e73-a846-26995bb087ea" isOneWay="false" action="CustomerAccount_setCustomerAccount" name="setCustomerAccount" bindingOperationName="setCustomerAccount" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="02fc89e3-0c77-4eb2-9970-cc7b8a187f24" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#endpoint}</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:esb="http://www.videotron.com/EsbCustomerInformationManagement.doc.requestHeader.Header" xmlns:_0="http://www.videotron.com/EsbCustomerInformationManagement/CustomerAccount/2_0" xmlns:ns="http://www.videotron.com/ENT_Customer/Customer/2.0">\r
+   <soap:Header>\r
+      <esb:header>\r
+         <!--Optional:-->
+         <esb:transactionId>1</esb:transactionId>
+         <!--Optional:-->
+         <esb:transactionStartDateTime>2018-10-20T10:10:10</esb:transactionStartDateTime>
+         <!--Optional:-->
+         <esb:transactionExpirationDateTime>2018-10-21T10:10:10</esb:transactionExpirationDateTime>
+         <!--Optional:-->
+         <esb:requestorPlatform>A</esb:requestorPlatform>
+
+      </esb:header>\r
+   </soap:Header>\r
+   <soap:Body>\r
+      <_0:setCustomerAccount_In>\r
+         <ns:customerInput>\r
+            <party type="INDIVIDUAL"/>\r
+            <id>1</id>\r
+            <customerAccount>\r
+               <id>1</id>\r
+               <!--Optional:-->\r
+               <customerBillSpec>\r
+                  <billDeliveryMethod>1</billDeliveryMethod>\r
+               </customerBillSpec>\r
+               <!--Optional:-->\r
+               <customerAccountContact media="?">\r
+                  <contactPointType>CONTACTEMAIL</contactPointType>\r
+                  <emailAddress>test@gmail.com</emailAddress>\r
+               </customerAccountContact>\r
+            </customerAccount>\r
+         </ns:customerInput>\r
+      </_0:setCustomerAccount_In>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.videotron.com/EsbCustomerInformationManagement/CustomerAccount/2_0/CustomerAccount_PortType/setCustomerAccountRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="e5709da3-1acc-42be-9cf1-57f4402f9f04" name="TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="ae065ed7-7af1-4816-ab1a-79407b41b74b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1.1 - getCustomerAccount - Success" searchProperties="true"><con:settings/><con:testStep type="request" name="getCustomerAccount" id="53da7fee-ad0c-44e5-970d-e7caf6b60b97"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>EsbCustomerInformationManagement_CustomerAccount_CustomerAccount_Binder</con:interface><con:operation>getCustomerAccount</con:operation><con:request name="getCustomerAccount" id="ca1f815e-2b1f-4b54-9bf8-71f5307c4fe7"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#endpoint}</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:esb="http://www.videotron.com/EsbCustomerInformationManagement.doc.requestHeader.Header" xmlns:_0="http://www.videotron.com/EsbCustomerInformationManagement/CustomerAccount/2_0">
+   <soap:Header>
+      <esb:header>
+         <!--Optional:-->
+         <esb:transactionId>1</esb:transactionId>
+         <!--Optional:-->
+         <esb:transactionStartDateTime>2018-10-20T10:10:10</esb:transactionStartDateTime>
+         <!--Optional:-->
+         <esb:transactionExpirationDateTime>2018-10-21T10:10:10</esb:transactionExpirationDateTime>
+         <!--Optional:-->
+         <esb:requestorPlatform>A</esb:requestorPlatform>
+      </esb:header>
+   </soap:Header>
+   <soap:Body>
+      <_0:getCustomerAccount_In>
+         <customerAccountNo>5555</customerAccountNo>
+      </_0:getCustomerAccount_In>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="1172a70f-e51f-44e4-840e-d248dbc37bf8"/><con:assertion type="Schema Compliance" id="e3784ce3-5938-4f4d-b27e-f47d9717511f"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="9f96c4af-b4f5-4c95-9417-4ec1989e99ed"/><con:assertion type="Valid HTTP Status Codes" id="8b008ef3-83cb-4675-9d1f-57a3d3dcd722" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:loadTest id="5c9986bd-d456-4016-9e6c-197d554131ec" name="LoadTest - getCustomerAccount"><con:settings><con:setting id="HttpSettings@close-connections">false</con:setting></con:settings><con:threadCount>20</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>10</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties/></con:testCase><con:testCase id="72fb1d8f-4e48-421e-b47d-3731e6bae5d3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 2.1 - setCustomerAccount - Success" searchProperties="true"><con:settings/><con:testStep type="request" name="setCustomerAccount" id="5caa9fe7-d534-44b2-9b99-8d060b4870c1"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>EsbCustomerInformationManagement_CustomerAccount_CustomerAccount_Binder</con:interface><con:operation>setCustomerAccount</con:operation><con:request name="setCustomerAccount" id="5135d3e9-fdb7-4242-a97d-9b4b49be0aee"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#endpoint}</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:esb="http://www.videotron.com/EsbCustomerInformationManagement.doc.requestHeader.Header" xmlns:_0="http://www.videotron.com/EsbCustomerInformationManagement/CustomerAccount/2_0" xmlns:ns="http://www.videotron.com/ENT_Customer/Customer/2.0">
+   <soap:Header>
+      <esb:header>
+         <!--Optional:-->
+         <esb:transactionId>1</esb:transactionId>
+         <!--Optional:-->
+         <esb:transactionStartDateTime>2018-10-20T10:10:10</esb:transactionStartDateTime>
+         <!--Optional:-->
+         <esb:transactionExpirationDateTime>2018-10-21T10:10:10</esb:transactionExpirationDateTime>
+         <!--Optional:-->
+         <esb:requestorPlatform>A</esb:requestorPlatform>
+
+      </esb:header>
+   </soap:Header>
+   <soap:Body>
+      <_0:setCustomerAccount_In>
+         <ns:customerInput>
+            <party type="INDIVIDUAL"/>
+            <id>1</id>
+            <customerAccount>
+               <id>1</id>
+               <!--Optional:-->
+               <customerBillSpec>
+                  <billDeliveryMethod>1</billDeliveryMethod>
+               </customerBillSpec>
+               <!--Optional:-->
+               <customerAccountContact media="?">
+                  <contactPointType>CONTACTEMAIL</contactPointType>
+                  <emailAddress>test@gmail.com</emailAddress>
+               </customerAccountContact>
+            </customerAccount>
+         </ns:customerInput>
+      </_0:setCustomerAccount_In>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3326c9c7-6d00-4ad0-ad0d-7dd28cd395f5"/><con:assertion type="Schema Compliance" id="a443fb19-478c-4982-b478-794aae514bf2"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="5ce45bed-fc93-4b55-9921-80a37b1e90a0"/><con:assertion type="Valid HTTP Status Codes" id="02015aa0-1b63-4eb4-9443-fc00920ece7e" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="OVERRIDE" wssType="" incomingWss="">${Project.endpoint}</con:endpoint></con:endpointStrategy><con:properties><con:property><con:name>endpoint</con:name><con:value>http://customer-account-service-dev.cloudapps.opticca.com/soap</con:value></con:property><con:property><con:name>threads</con:name><con:value>20</con:value></con:property><con:property><con:name>duration</con:name><con:value>60</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
